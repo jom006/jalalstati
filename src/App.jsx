@@ -5,7 +5,6 @@ import {
   CheckCircle2,
   ChevronLeft,
   ChevronRight,
-  Code2,
   Database,
   Globe2,
   Mail,
@@ -214,6 +213,45 @@ const sourceLinks = [
   ['Dailymotion jom006', 'https://www.dailymotion.com/user/jom006'],
 ];
 
+const personalLinks = [
+  {
+    label: 'LinkedIn',
+    handle: 'linkedin.com/in/jom0006',
+    href: 'https://www.linkedin.com/in/jom0006/',
+    mark: 'in',
+  },
+  {
+    label: 'Upwork',
+    handle: 'upwork.com/freelancers/jalalstati',
+    href: 'https://upwork.com/freelancers/jalalstati',
+    mark: 'UP',
+  },
+  {
+    label: 'Facebook',
+    handle: 'facebook.com/jom006',
+    href: 'https://www.facebook.com/jom006',
+    mark: 'f',
+  },
+  {
+    label: 'YouTube',
+    handle: 'youtube.com/@JalalS',
+    href: 'https://www.youtube.com/@JalalS',
+    mark: 'YT',
+  },
+  {
+    label: 'GitHub',
+    handle: 'github.com/jom006',
+    href: 'https://github.com/jom006',
+    mark: 'GH',
+  },
+  {
+    label: 'X',
+    handle: 'x.com/jom006',
+    href: 'https://x.com/jom006',
+    mark: 'X',
+  },
+];
+
 function ExternalLink({ href, children, className = 'inline-link' }) {
   return (
     <a className={className} href={href} target="_blank" rel="noreferrer">
@@ -297,6 +335,7 @@ function App() {
           <a href="#projects">Projects</a>
           <a href="#websites">Websites</a>
           <a href="#footprint">Footprint</a>
+          <a href="#links">Links</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
@@ -502,6 +541,28 @@ function App() {
         </div>
       </section>
 
+      <section id="links" className="links section-band">
+        <div className="section-heading">
+          <p className="eyebrow">Links</p>
+          <h2>Professional profiles and public channels.</h2>
+          <p>Connect with me across freelance, developer and social platforms.</p>
+        </div>
+        <div className="links-grid">
+          {personalLinks.map((link) => (
+            <a className="social-link-card" href={link.href} target="_blank" rel="noreferrer" key={link.href}>
+              <span className="social-link-icon" aria-hidden="true">
+                {link.mark}
+              </span>
+              <span className="social-link-copy">
+                <strong>{link.label}</strong>
+                <span>{link.handle}</span>
+              </span>
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </a>
+          ))}
+        </div>
+      </section>
+
       <section id="contact" className="contact section-band">
         <div>
           <p className="eyebrow">Contact</p>
@@ -554,10 +615,6 @@ function App() {
           <span>
             <Globe2 size={16} aria-hidden="true" />
             Portfolio site
-          </span>
-          <span>
-            <Code2 size={16} aria-hidden="true" />
-            GitHub: jom006/jalalstati
           </span>
           <span>
             <Rocket size={16} aria-hidden="true" />
