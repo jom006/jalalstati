@@ -124,6 +124,44 @@ const projects = [
   },
 ];
 
+const builtWebsites = [
+  {
+    title: 'Peter Werner',
+    href: 'https://peterwerner.dk/',
+    image: '/assets/website-peterwerner.jpg',
+  },
+  {
+    title: 'Oliver Stanescu',
+    href: 'https://oliverstanescu.dk/',
+    image: '/assets/website-oliverstanescu.jpg',
+  },
+  {
+    title: '1000 Stemmer',
+    href: 'https://1000stemmer.dk/',
+    image: '/assets/website-1000stemmer.jpg',
+  },
+  {
+    title: 'Anne Bakland',
+    href: 'https://annebakland.dk/',
+    image: '/assets/website-annebakland.jpg',
+  },
+  {
+    title: 'Niels Nielsen',
+    href: 'https://nielsnielsens.dk/',
+    image: '/assets/website-nielsnielsens.jpg',
+  },
+  {
+    title: 'Jonathan Christensen',
+    href: 'https://jonathanchristensen.dk/',
+    image: '/assets/website-jonathan-christensen.jpg',
+  },
+  {
+    title: 'Anders Wortmann',
+    href: 'https://anderswortmann.dk/',
+    image: '/assets/website-anderswortmann.jpg',
+  },
+];
+
 const footprint = [
   {
     year: '2010 onwards',
@@ -193,6 +231,7 @@ function App() {
         <nav>
           <a href="#services">Services</a>
           <a href="#projects">Projects</a>
+          <a href="#websites">Websites</a>
           <a href="#footprint">Footprint</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -202,7 +241,7 @@ function App() {
         <div className="hero-copy">
           <div className="profile-lockup">
             <img className="profile-photo" src="/assets/jalal-stati-headshot.jpeg" alt="Jalal Stati portrait" />
-            <div>
+            <div className="profile-nameplate">
               <strong>Jalal Stati</strong>
               <span>Full stack developer</span>
             </div>
@@ -348,6 +387,29 @@ function App() {
             {projects[1].links[0].label}
           </ExternalLink>
         </article>
+      </section>
+
+      <section id="websites" className="websites section-band">
+        <div className="section-heading">
+          <p className="eyebrow">Websites created by Jalal</p>
+          <h2>Danish artist and entertainment websites I made.</h2>
+          <p>
+            I created these public websites for performers and entertainment brands, combining visual presentation,
+            event discovery and booking-focused user journeys.
+          </p>
+        </div>
+
+        <div className="website-grid">
+          {builtWebsites.map((site) => (
+            <article className="website-card" key={site.title}>
+              <img src={site.image} alt={`${site.title} website screenshot`} loading="lazy" />
+              <div className="website-card-body">
+                <h3>{site.title}</h3>
+                <ExternalLink href={site.href}>Visit website</ExternalLink>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section id="footprint" className="section-band">
