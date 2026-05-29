@@ -94,7 +94,7 @@ const stackGroups = [
   },
   {
     title: 'Delivery',
-    items: ['GitHub', 'Static hosting', 'Performance checks', 'Public launch support'],
+    items: ['GitHub', 'Hosting setup', 'Performance checks', 'Public launch support'],
   },
 ];
 
@@ -462,7 +462,7 @@ function App() {
 
       <section id="websites" className="websites section-band">
         <div className="section-heading">
-          <p className="eyebrow">Websites created by Jalal</p>
+          <p className="eyebrow">Selected websites</p>
           <h2>Danish artist and entertainment websites I made.</h2>
           <p>
             I created these public websites for performers and entertainment brands, combining visual presentation,
@@ -553,7 +553,7 @@ function App() {
           </span>
           <span>
             <Globe2 size={16} aria-hidden="true" />
-            Static portfolio site
+            Portfolio site
           </span>
           <span>
             <Code2 size={16} aria-hidden="true" />

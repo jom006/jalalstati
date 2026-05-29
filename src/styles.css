@@ -945,7 +945,7 @@ h3 {
   }
 
   .site-header {
-    position: static;
+    position: initial;
     align-items: flex-start;
     flex-direction: column;
   }

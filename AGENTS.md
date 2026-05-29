@@ -6,15 +6,15 @@ This repository contains Jalal Stati's personal corporate portfolio.
 
 - Repository: `jom006/jalalstati`
 - Branch: `main`
-- Hosting target: Static hosting provider
+- Hosting target: Website hosting provider
 - Build command: `npm run build`
 - Build output directory: `dist`
 
 ## Development
 
 - Primary stack: React + Vite
-- The site is static. Do not add a backend or contact form processor unless explicitly requested.
-- Contact actions should use static links such as `mailto:`, `tel:`, and WhatsApp links.
+- The site is frontend-only. Do not add a backend or contact form processor unless explicitly requested.
+- Contact actions should use direct links such as `mailto:`, `tel:`, and WhatsApp links.
 - Keep credentials, tokens, FTP details, admin passwords, and private deployment information out of this repository.
 
 ## Content
