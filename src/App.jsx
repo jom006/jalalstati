@@ -94,7 +94,7 @@ const stackGroups = [
   },
   {
     title: 'Delivery',
-    items: ['GitHub', 'Cloudflare Pages', 'Performance checks', 'Public launch support'],
+    items: ['GitHub', 'Static hosting', 'Performance checks', 'Public launch support'],
   },
 ];
 
@@ -553,7 +553,7 @@ function App() {
           </span>
           <span>
             <Globe2 size={16} aria-hidden="true" />
-            Cloudflare Pages ready
+            Static portfolio site
           </span>
           <span>
             <Code2 size={16} aria-hidden="true" />

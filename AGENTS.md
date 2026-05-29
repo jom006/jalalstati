@@ -6,7 +6,7 @@ This repository contains Jalal Stati's personal corporate portfolio.
 
 - Repository: `jom006/jalalstati`
 - Branch: `main`
-- Hosting target: Cloudflare Pages
+- Hosting target: Static hosting provider
 - Build command: `npm run build`
 - Build output directory: `dist`
 
