@@ -200,6 +200,13 @@ function App() {
 
       <section id="top" className="hero section-band">
         <div className="hero-copy">
+          <div className="profile-lockup">
+            <img className="profile-photo" src="/assets/jalal-stati-headshot.jpeg" alt="Jalal Stati portrait" />
+            <div>
+              <strong>Jalal Stati</strong>
+              <span>Full stack developer</span>
+            </div>
+          </div>
           <p className="eyebrow">PHP, Laravel, React and React Native developer</p>
           <h1>Corporate web and mobile software built around practical business outcomes.</h1>
           <p className="lead">
