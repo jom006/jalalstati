@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import {
   ArrowUpRight,
   BriefcaseBusiness,
   CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
   Code2,
   Database,
   Globe2,
@@ -220,6 +223,67 @@ function ExternalLink({ href, children, className = 'inline-link' }) {
   );
 }
 
+function JaybiCarousel() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeScreen = jaybiScreenshots[activeIndex];
+
+  const showPrevious = () => {
+    setActiveIndex((currentIndex) =>
+      currentIndex === 0 ? jaybiScreenshots.length - 1 : currentIndex - 1,
+    );
+  };
+
+  const showNext = () => {
+    setActiveIndex((currentIndex) =>
+      currentIndex === jaybiScreenshots.length - 1 ? 0 : currentIndex + 1,
+    );
+  };
+
+  return (
+    <div className="jaybi-carousel" aria-label="Jaybi app screenshots carousel">
+      <div className="carousel-stage">
+        <button
+          className="carousel-arrow previous"
+          type="button"
+          onClick={showPrevious}
+          aria-label="Previous Jaybi screenshot"
+        >
+          <ChevronLeft size={22} aria-hidden="true" />
+        </button>
+        <div className="carousel-phone">
+          <img src={activeScreen.src} alt={activeScreen.alt} />
+        </div>
+        <button
+          className="carousel-arrow next"
+          type="button"
+          onClick={showNext}
+          aria-label="Next Jaybi screenshot"
+        >
+          <ChevronRight size={22} aria-hidden="true" />
+        </button>
+        <span className="carousel-count" aria-live="polite">
+          {String(activeIndex + 1).padStart(2, '0')} / {String(jaybiScreenshots.length).padStart(2, '0')}
+        </span>
+      </div>
+
+      <div className="carousel-thumbnails" aria-label="Choose Jaybi screenshot">
+        {jaybiScreenshots.map((screen, index) => (
+          <button
+            className="carousel-thumb"
+            type="button"
+            key={screen.src}
+            onClick={() => setActiveIndex(index)}
+            aria-current={index === activeIndex ? 'true' : undefined}
+            aria-label={`Show Jaybi screenshot ${index + 1}`}
+          >
+            <img src={screen.src} alt="" loading="lazy" aria-hidden="true" />
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function App() {
   return (
     <main>
@@ -376,11 +440,7 @@ function App() {
               {projects[0].links[0].label}
             </ExternalLink>
           </div>
-          <div className="screenshot-grid" aria-label="Jaybi screenshots">
-            {jaybiScreenshots.map((screen) => (
-              <img key={screen.src} src={screen.src} alt={screen.alt} loading="lazy" />
-            ))}
-          </div>
+          <JaybiCarousel />
         </article>
 
         <article className="project-card wide">
